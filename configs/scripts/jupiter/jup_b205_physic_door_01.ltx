@@ -1,0 +1,35 @@
+[logic]
+active = ph_door@closed
+
+[ph_door@locked]
+locked = true
+closed = true
+on_info = {+jup_b205_pass_code_valide} ph_door@closed
+snd_open_start = trader_door_locked ; Jurok
+snd_close_start = trader_door_close_start ; Jurok
+snd_close_stop = trader_door_close_stop ; Jurok
+tip_open = tip_door_blocked
+not_for_npc = true
+
+[ph_door@closed]
+locked = false
+closed = true
+snd_open_start = trader_door_open_start ; Jurok
+snd_close_start = trader_door_close_start ; Jurok
+snd_close_stop = trader_door_close_stop ; Jurok
+;on_use = ph_door@open
+on_info = {+jup_b205_open_the_door} ph_door@open
+not_for_npc = true
+tip_open = tip_door_blocked 
+;tip_door_open
+
+[ph_door@open]
+locked = false
+closed = false
+snd_open_start = trader_door_open_start ; Jurok
+snd_close_start = trader_door_close_start ; Jurok
+snd_close_stop = trader_door_close_stop ; Jurok
+show_tips = false
+
+
+

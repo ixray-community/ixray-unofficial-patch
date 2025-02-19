@@ -1,0 +1,34 @@
+; Jurok start
+[logic]
+active = sr_idle@start
+
+[sr_idle@start]
+on_info = {+pri_b305_fifth_cam_end =actor_in_zone(pri_a28_sr_horror)} sr_deimos
+
+[sr_deimos]
+movement_speed = 42
+growing_koef = 0.45
+lowering_koef = 0.22
+pp_effector = psi
+pp_effector2 = deimos1
+cam_effector = pripyat_horror
+cam_effector_repeating_time = 5
+noise_sound = pri_a28_deimos_noise_sound
+heartbeet_sound = pri_a28_deimos_heartbeat
+health_lost = 0.1
+disable_bound = 0.2
+switch_lower_bound = 0.4
+switch_upper_bound = 0.75
+on_info = {!actor_in_zone(pri_a28_sr_horror)} sr_idle@wait
+on_info2 = {+pri_a28_evac_com_to_helicopter} sr_idle@nil
+on_info3 = {+pri_a28_actor_in_zone_stay} sr_idle@nil
+on_info4 = {+pri_a28_scene_end} sr_idle@nil
+
+[sr_idle@wait]
+on_info = {=actor_in_zone(pri_a28_sr_horror)} sr_deimos
+on_info2 = {+pri_a28_evac_com_to_helicopter} sr_idle@nil
+on_info3 = {+pri_a28_actor_in_zone_stay} sr_idle@nil
+on_info4 = {+pri_a28_scene_end} sr_idle@nil
+
+[sr_idle@nil]
+; Jurok end

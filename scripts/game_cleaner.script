@@ -1,0 +1,37 @@
+-- Скрипт-уборщик безхозного оружия и трупов монтров
+-- Автор: naxac
+-- Доработка: Jurok
+
+local items_parents = {}
+-- mode - флаг, обозначающий, удалять ли мусор на локации, на которой в данный момент находится ГГ
+function cleaning(mode)
+	-- получаем таблицу с id вещей в тайниках, чтобы не удалить ничего из них
+	local forbidden_ids = treasure_manager.get_treasure_manager().items_from_secrets
+	local a = db.actor
+	local gg = game_graph()
+	if not gg:valid_vertex_id(a:game_vertex_id()) then return end
+	local act_level = mode==false and gg:vertex(a:game_vertex_id()):level_id() or nil
+	local obj, obj_name, obj_sect, obj_id
+	for i=1,65534 do
+		obj = alife():object(i)
+		-- удаляем только на локациях, на которых в данный момент нет ГГ
+		-- а именно - с той, на которой только что намусорили и ушли))
+		if obj and gg:valid_vertex_id(obj.m_game_vertex_id) and gg:vertex(obj.m_game_vertex_id):level_id()~=act_level then
+			obj_name = obj:name()
+			obj_id = obj.id
+			obj_sect = obj:section_name()
+			-- удаляем только объекты, заспавненные скриптом
+			if obj_name==obj_sect..tostring(obj_id) then
+				if IsMonster(obj) and obj:alive() == false then -- удаляем трупы мутантов
+					alife():release(obj,true)
+				elseif obj.parent_id==65535 then -- удаляем безхозное оружие
+					if isWeapon(obj) and forbidden_ids[obj_id]==nil then
+						alife():release(obj, true)
+					end
+				else
+					items_parents[obj_id] = obj.parent_id
+				end
+			end
+		end
+	end
+end

@@ -1,0 +1,22 @@
+[logic]
+active = ph_door@closed
+
+[ph_door@closed]
+locked = true
+closed = true 
+tip_open = tip_door_open
+on_use = ph_door@open 
+not_for_npc = true
+snd_open_start = wood_large_open ; Jurok
+snd_close_start = wood_large_close_start ; Jurok
+snd_close_stop = wood_large_close_stop ; Jurok
+
+[ph_door@open]
+locked = false
+closed = false
+tip_close = tip_door_close
+on_use = ph_door@closed
+snd_open_start = wood_large_open ; Jurok
+snd_close_start = wood_large_close_start ; Jurok
+snd_close_stop = wood_large_close_stop ; Jurok
+show_tips = false
