@@ -141,7 +141,7 @@ function dream_callback()
 		level_weathers.get_weather_manager():forced_weather_change()
 	end
 	db.actor.power = 1
-	printf("dream_callback: time forwarded on [%d]", hours)
+    printf("dream_callback: time forwarded on [%d]", hours)
 end
 
 function dream_callback2()

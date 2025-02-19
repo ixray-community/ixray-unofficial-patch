@@ -1,11 +1,11 @@
 ----------------------------------------------------------------------------------------------------------------------
---'	Схема обыска трупов
---'	автор: Диденко Руслан (Stohe)
+--'	РЎС…РµРјР° РѕР±С‹СЃРєР° С‚СЂСѓРїРѕРІ
+--'	Р°РІС‚РѕСЂ: Р”РёРґРµРЅРєРѕ Р СѓСЃР»Р°РЅ (Stohe)
 --'	TODO:
 ----------------------------------------------------------------------------------------------------------------------
 lootable_table = {}
 
---Патроны
+--РџР°С‚СЂРѕРЅС‹
 lootable_table["ammo_9x18_fmj"] = true
 lootable_table["ammo_9x18_pmm"] = true
 lootable_table["ammo_9x19_pbp"] = true
@@ -28,7 +28,7 @@ lootable_table["grenade_rgd5"] = true
 lootable_table["ammo_m209"] = true
 lootable_table["ammo_pkm_100"] = true
 
---Оружие
+--РћСЂСѓР¶РёРµ
 lootable_table["wpn_pm"] = true
 lootable_table["wpn_pb"] = true
 lootable_table["wpn_fort"] = true
@@ -61,7 +61,7 @@ lootable_table["wpn_g36"] = true
 lootable_table["wpn_fn2000"] = true
 lootable_table["wpn_pkm"] = true
 
--- Аддоны
+-- РђРґРґРѕРЅС‹
 lootable_table["wpn_addon_scope"] = true
 lootable_table["wpn_addon_scope_x2.7"] = true
 lootable_table["wpn_addon_scope_detector"] = true
@@ -75,7 +75,7 @@ lootable_table["wpn_addon_silencer"] = true
 lootable_table["wpn_addon_grenade_launcher"] = true
 lootable_table["wpn_addon_grenade_launcher_m203"] = true
 
--- Броники
+-- Р‘СЂРѕРЅРёРєРё
 lootable_table["novice_outfit"] = true
 lootable_table["specops_outfit"] = true
 lootable_table["military_outfit"] = true
@@ -88,21 +88,21 @@ lootable_table["cs_heavy_outfit"] = true
 lootable_table["dolg_outfit"] = true
 lootable_table["dolg_heavy_outfit"] = true
 
--- Шлемы
+-- РЁР»РµРјС‹
 lootable_table["helm_respirator"] = true
 lootable_table["helm_hardhat"] = true
 lootable_table["helm_protective"] = true
 lootable_table["helm_tactic"] = true
 lootable_table["helm_battle"] = true
 
---Медикаменты
+--РњРµРґРёРєР°РјРµРЅС‚С‹
 lootable_table["bandage"] = true
 lootable_table["medkit"] = true
 lootable_table["medkit_scientic"] = true
 lootable_table["medkit_army"] = true
 lootable_table["antirad"] = true
 
---Бустеры
+--Р‘СѓСЃС‚РµСЂС‹
 lootable_table["drug_booster"] = true
 lootable_table["drug_coagulant"] = true
 lootable_table["drug_psy_blockade"] = true
@@ -110,20 +110,20 @@ lootable_table["drug_antidot"] = true
 lootable_table["drug_radioprotector"] = true
 lootable_table["drug_anabiotic"] = true
 
---Еда
+--Р•РґР°
 lootable_table["bread"] = true
 lootable_table["kolbasa"] = true
 lootable_table["conserva"] = true
 lootable_table["vodka"] = true
 lootable_table["energy_drink"] = true
 
---Предметы
+--РџСЂРµРґРјРµС‚С‹
 lootable_table["detector_simple"] = true
 lootable_table["detector_advanced"] = true
 lootable_table["detector_elite"] = true
 lootable_table["detector_scientific"] = true
 
---Уникальные предметы
+--РЈРЅРёРєР°Р»СЊРЅС‹Рµ РїСЂРµРґРјРµС‚С‹
 lootable_table["wpn_pm_actor"] = true
 lootable_table["wpn_sig550_luckygun"] = true
 lootable_table["wpn_pkm_zulus"] = true
@@ -197,7 +197,7 @@ function evaluator_corpse:evaluate()
 
 	local corpses = release_body_manager.get_release_body_manager().release_objects_table
 
-	local nearest_corpse_dist = 400 -- Будет выбирать только трупы, ближе чем эта дистанция (проверяется по квадрату расстояния)
+	local nearest_corpse_dist = 400 -- Р‘СѓРґРµС‚ РІС‹Р±РёСЂР°С‚СЊ С‚РѕР»СЊРєРѕ С‚СЂСѓРїС‹, Р±Р»РёР¶Рµ С‡РµРј СЌС‚Р° РґРёСЃС‚Р°РЅС†РёСЏ (РїСЂРѕРІРµСЂСЏРµС‚СЃСЏ РїРѕ РєРІР°РґСЂР°С‚Сѓ СЂР°СЃСЃС‚РѕСЏРЅРёСЏ)
 	local nearest_corpse_vertex = nil
 	local nearest_corpse_position = nil
 	local corpse_id	= nil

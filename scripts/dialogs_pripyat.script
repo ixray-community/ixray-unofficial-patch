@@ -22,13 +22,13 @@ function actor_hasnt_pri_a17_gauss_rifle(first_speaker, second_speaker)
 	return not actor_has_pri_a17_gauss_rifle(first_speaker, second_speaker)
 end
 
--- ïåðåäà÷à àðòåôàêòà èãðîêó îò ïðîâîäíèêà â ïàìÿòü î âûïîëíåííîì çàäàíèèÿ íà Þïèòåðå
+-- Ð¿ÐµÑ€ÐµÐ´Ð°Ñ‡Ð° Ð°Ñ€Ñ‚ÐµÑ„Ð°ÐºÑ‚Ð° Ð¸Ð³Ñ€Ð¾ÐºÑƒ Ð¾Ñ‚ Ð¿Ñ€Ð¾Ð²Ð¾Ð´Ð½Ð¸ÐºÐ° Ð² Ð¿Ð°Ð¼ÑÑ‚ÑŒ Ð¾ Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½Ð½Ð¾Ð¼ Ð·Ð°Ð´Ð°Ð½Ð¸Ð¸Ñ Ð½Ð° Ð®Ð¿Ð¸Ñ‚ÐµÑ€Ðµ
 
 function transfer_artifact_af_baloon(first_speaker, second_speaker)
 	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "af_baloon")
 end
 
--- ïëàòà çà òåëåïîðò èãðîêà íà Çàòîí ÷åðåç Þïèòåð (äèàëîã ñ ïðîâîäíèêîì ñ Þïèòåðà)
+-- Ð¿Ð»Ð°Ñ‚Ð° Ð·Ð° Ñ‚ÐµÐ»ÐµÐ¿Ð¾Ñ€Ñ‚ Ð¸Ð³Ñ€Ð¾ÐºÐ° Ð½Ð° Ð—Ð°Ñ‚Ð¾Ð½ Ñ‡ÐµÑ€ÐµÐ· Ð®Ð¿Ð¸Ñ‚ÐµÑ€ (Ð´Ð¸Ð°Ð»Ð¾Ð³ Ñ Ð¿Ñ€Ð¾Ð²Ð¾Ð´Ð½Ð¸ÐºÐ¾Ð¼ Ñ Ð®Ð¿Ð¸Ñ‚ÐµÑ€Ð°)
 
 function pay_cost_to_guide_to_zaton(first_speaker, second_speaker)
 	if has_alife_info("zat_b215_gave_maps") then
@@ -38,7 +38,7 @@ function pay_cost_to_guide_to_zaton(first_speaker, second_speaker)
 	end
 end
 
--- ïðîâåðêà, ïëàòåæåñïîñîáíîñòè èãðîêà çà òåëåïîðò íà Çàòîí ÷åðåç Þïèòåð
+-- Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ°, Ð¿Ð»Ð°Ñ‚ÐµÐ¶ÐµÑÐ¿Ð¾ÑÐ¾Ð±Ð½Ð¾ÑÑ‚Ð¸ Ð¸Ð³Ñ€Ð¾ÐºÐ° Ð·Ð° Ñ‚ÐµÐ»ÐµÐ¿Ð¾Ñ€Ñ‚ Ð½Ð° Ð—Ð°Ñ‚Ð¾Ð½ Ñ‡ÐµÑ€ÐµÐ· Ð®Ð¿Ð¸Ñ‚ÐµÑ€
 
 function jup_b43_actor_has_10000_money(first_speaker, second_speaker)
 	-- Jurok start
@@ -55,13 +55,13 @@ function jup_b43_actor_do_not_has_10000_money(first_speaker, second_speaker)
 end
 
 --[[
--- ïëàòà çà òåëåïîðò èãðîêà íà Þïèòåð (äèàëîã ñ ïðîâîäíèêîì ñ Þïèòåðà)
+-- Ð¿Ð»Ð°Ñ‚Ð° Ð·Ð° Ñ‚ÐµÐ»ÐµÐ¿Ð¾Ñ€Ñ‚ Ð¸Ð³Ñ€Ð¾ÐºÐ° Ð½Ð° Ð®Ð¿Ð¸Ñ‚ÐµÑ€ (Ð´Ð¸Ð°Ð»Ð¾Ð³ Ñ Ð¿Ñ€Ð¾Ð²Ð¾Ð´Ð½Ð¸ÐºÐ¾Ð¼ Ñ Ð®Ð¿Ð¸Ñ‚ÐµÑ€Ð°)
 
 function pay_cost_to_guide_to_jupiter(first_speaker, second_speaker)
 	dialogs.relocate_money_from_actor(first_speaker, second_speaker, 7000)
 end
 
--- ïðîâåðêà ïëàòåæåñïîñîáíîñòè èãðîêà çà òåëåïîðò íà Þïèòåð
+-- Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð¿Ð»Ð°Ñ‚ÐµÐ¶ÐµÑÐ¿Ð¾ÑÐ¾Ð±Ð½Ð¾ÑÑ‚Ð¸ Ð¸Ð³Ñ€Ð¾ÐºÐ° Ð·Ð° Ñ‚ÐµÐ»ÐµÐ¿Ð¾Ñ€Ñ‚ Ð½Ð° Ð®Ð¿Ð¸Ñ‚ÐµÑ€
 
 function jup_b43_actor_has_7000_money(first_speaker, second_speaker)
 	return db.actor:money() >= 7000
