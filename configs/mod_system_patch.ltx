@@ -1,4 +1,57 @@
 ![inventory]
 ; WinCap start
-slot_persistent_9   = false   ;detector
+slot_persistent_9 = false ;detector
 ; WinCap end
+
+; zone_campfire.ltx
+![campfire]
+disabled_sound = ambient\silence
+
+; game_relations.ltx
+![communities_relations] ; Jurok
+dolg          =     0, -5000, 5000,     0,  -5000,     0,       0,       0,  -5000,      0,   -5000
+freedom       =     0, -5000,-5000,     0,   5000,     0,       0,       0,  -5000,      0,   -5000
+monolith      = -5000, -5000,    0,     0,      0, -5000,   -5000,    1000,  -5000,  -5000,    1000
+
+; m_crow.ltx
+![m_crow]
+min_height = 60 ; Jurok
+
+; outfit.ltx
+![helm_battle]
+nightvision_sect = effector_nightvision_1 ; Jurok
+
+; devices.ltx
+![detector_simple]
+; Jurok start
+af_class_12		= af_oasis_heart
+af_sound_12_		= detectors\art_beep1
+af_freq_12		= 0.05, 2
+; Jurok end
+
+![detector_advanced]
+; Jurok start
+af_class_13		= af_dummy_glassbeads
+af_class_14		= af_night_star
+af_class_15		= af_vyvert
+af_class_16		= af_soul
+af_class_17		= af_fuzz_kolobok
+af_class_18		= af_electra_moonlight
+af_class_19		= af_dummy_battery
+af_sound_19_	= detectors\art_beep1
+af_freq_19		= 0.05, 2
+; Jurok end
+
+![detector_elite]
+; Jurok start
+af_class_20		= af_eye
+af_class_21		= af_fire
+af_class_22		= af_gravi
+af_class_23		= af_gold_fish
+af_class_24		= af_baloon
+af_class_25		= af_glass
+af_class_26		= af_dummy_dummy
+af_class_27		= af_ice
+af_sound_27_	= detectors\art_beep1
+af_freq_27		= 0.05, 2
+; Jurok end
