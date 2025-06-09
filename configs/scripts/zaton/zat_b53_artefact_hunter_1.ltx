@@ -107,14 +107,19 @@ meet = meet
 anim = sit_ass
 target = path | zat_b53_artefact_hunter_1_sit_ass_look, 0
 on_info = {+zat_b53_actor_enemy} walker@actor_enemy
+on_info2 = {-zat_b53_go_nil +zat_b53_thanks_dialog_end !talking =surge_started} %+zat_b53_go_nil% ; Jurok
 
 [walker@actor_enemy]
 corpse_detection_enabled = false
 meet = no_meet
 path_walk = artefact_hunter_1_spawn_point
 on_info = {!actor_enemy} %=actor_enemy% ; Jurok
+on_info2 = {=surge_kill_all} %=kill_npc% ; Jurok
 
 [meet]
+close_snd_hello = {=is_wounded} nil, {=surge_started} nil, {=actor_enemy} nil, meet_hello ; Jurok
+close_snd_bye = nil ; Jurok
+snd_on_use = nil ; Jurok
 use = {=actor_enemy} false, true ; Jurok
 abuse = false
 allow_break = false
@@ -125,6 +130,9 @@ close_distance = 0
 far_distance = 0
 
 [meet@self]
+close_snd_hello = nil ; Jurok
+close_snd_bye = nil ; Jurok
+snd_on_use = nil ; Jurok
 use = {=actor_enemy} false, self ; Jurok
 meet_dialog = zat_b53_artefact_hunter_1_gathering_artefacts
 abuse = false
