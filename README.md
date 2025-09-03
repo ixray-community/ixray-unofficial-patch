@@ -16,6 +16,9 @@ Installation:
 4. Extract addon archive into the `ixr_addons` folder
 5. Start the game and play
 
+> [!IMPORTANT]
+> New game save required. The game will crash if you try to load a save without the mod loaded.
+
 Link to the current __IX-Ray__ [release](https://github.com/ixray-team/ixray-1.6-stcop/releases/latest)
 
 ## Contributors
