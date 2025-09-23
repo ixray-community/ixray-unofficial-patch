@@ -3966,12 +3966,29 @@
                 <text />
                 <next>11</next>
                 <next>12</next>
+                <next>14</next>
                 <next>1111</next>
                 <next>1112</next>
             </phrase>
             <phrase id="12">
+                <precondition>dialogs.is_not_wounded</precondition>
                 <text>zat_b53_artefact_hunter_1_gathering_artefacts_12</text>
                 <has_info>zat_b53_thanks_dialog_end</has_info>
+            </phrase>
+            <phrase id="14">
+                <precondition>dialogs.is_wounded</precondition>
+                <text>zat_b53_artefact_hunter_1_gathering_artefacts_11</text>
+                <has_info>zat_b53_thanks_dialog_end</has_info>
+                <next>114</next>
+                <next>112</next>
+                <next>113</next>
+            </phrase>
+            <phrase id="114">
+                <text>zat_b53_artefact_hunter_1_gathering_artefacts_111</text>
+                <precondition>dialogs.actor_have_medkit</precondition>
+                <action>dialogs_zaton.zat_b53_transfer_medkit_to_npc</action>
+                <action>xr_effects.restore_health</action>
+                <action>dialogs.break_dialog</action>
             </phrase>
             <phrase id="1112">
                 <text>zat_b53_artefact_hunter_1_gathering_artefacts_1112</text>

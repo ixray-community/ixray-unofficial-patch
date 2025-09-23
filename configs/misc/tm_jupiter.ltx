@@ -232,7 +232,7 @@ prior = 2
 storyline = false
 title = {+jup_b1_actor_has_half_artifact} jup_b1_bring_art_back_name, {+jup_b1_start} jup_b1_get_art_name, {+jup_b1_actor_atk_squad} jup_b1_get_art_name, {+jup_b1_go_on_task} jup_b1_join_squad_name, jup_b1_meet_squad_name
 descr = {+jup_b1_actor_has_half_artifact} jup_b1_bring_art_back_text, {+jup_b1_start} jup_b1_get_art_text, {+jup_b1_actor_atk_squad} jup_b1_get_art_text, {+jup_b1_go_on_task} jup_b1_join_squad_text, jup_b1_meet_squad_text
-target = {+jup_b1_actor_has_half_artifact} jup_b6_scientist_nuclear_physicist, {+jup_b1_start} jup_b1_half_artifact, {+jup_b1_actor_atk_squad} jup_b1_half_artifact, {+jup_b1_go_on_task} jup_b1_task_beacon, jup_b1_stalker_1
+target = {+jup_b1_actor_has_half_artifact} jup_b6_scientist_nuclear_physicist, {+jup_b1_start} jup_b1_half_artifact, {+jup_b1_actor_atk_squad} jup_b1_half_artifact, {+jup_b1_go_on_task} jup_b1_task_beacon, {+jup_b1_stalker_1_is_dead} jup_b1_stalker_squad, jup_b1_stalker_1; Jurok
 condlist_0 = {+jup_b1_complete_end} complete
 condlist_1 = {-jup_b1_give_task} reversed
 on_complete = %+jup_b1_task_done =inc_counter(jup_b1_sci_task_controller_count) =inc_faction_goodwill_to_actor(ecolog:250)%

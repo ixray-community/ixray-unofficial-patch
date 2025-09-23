@@ -164,11 +164,33 @@ on_info3 = {+jup_a12_stalker_prisoner_out_of_hangar +jup_a12_actor_paid_to_cashi
 on_info4 = {+jup_a12_actor_did_not_pay_to_cashier} walker@hide %+jup_a12_stalker_prisoner_out_of_hangar =disable_memory_object%
 on_info5 = {+jup_a12_stalker_prisoner_hit_by_actor} walker@quick_get_out_of_base
 on_info6 = {+jup_a12_stalker_prisoner_out_of_hangar !is_alive(jup_a12_bandit_cashier)} walker@out_of_containers
+on_info7 = {=surge_started} walker@out_of_hangar_surge ; Jurok
 meet = no_meet 
 gather_items_enabled = false
 help_wounded_enabled = false
 corpse_detection_enabled = false
 wounded = wounded@no_wound
+
+; Jurok start
+[walker@out_of_hangar_surge]
+path_walk = stalker_prisoner_thank_to_actor_walk
+path_look = stalker_prisoner_thank_to_actor_look
+combat_ignore_cond = {!actor_enemy} true, {-jup_a12_actor_enemy_to_bandits} true, false
+combat_ignore_keep_when_attacked = true
+def_state_moving = run
+on_info = {+jup_a12_bandit_out} walker@out_of_containers %+jup_a12_stalker_prisoner_out_of_hangar%
+on_info2 = {+jup_a12_bandit_cashier_dead} walker@quick_get_out_of_base
+on_info3 = {+jup_a12_stalker_prisoner_out_of_hangar +jup_a12_actor_paid_to_cashier} walker@out_of_containers
+on_info4 = {+jup_a12_actor_did_not_pay_to_cashier} walker@hide %+jup_a12_stalker_prisoner_out_of_hangar =disable_memory_object%
+on_info5 = {+jup_a12_stalker_prisoner_hit_by_actor} walker@quick_get_out_of_base
+on_info6 = {+jup_a12_stalker_prisoner_out_of_hangar !is_alive(jup_a12_bandit_cashier)} walker@out_of_containers
+on_info7 = {!surge_started} walker@out_of_hangar
+meet = no_meet
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+wounded = wounded@no_wound
+; Jurok end
 
 [walker@hide]
 path_walk = stalker_prisoner_battle_walk

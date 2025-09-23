@@ -8948,4 +8948,63 @@
             </phrase>
         </phrase_list>
     </dialog>
+    <dialog id="jup_b1_stalkers_about_tunnel_dialog_go_to_2">
+        <has_info>jup_b1_give_task</has_info>
+        <has_info>jup_b1_stalker_1_is_dead</has_info>
+        <dont_has_info>jup_b1_st_mission</dont_has_info>
+        <dont_has_info>jup_b1_start</dont_has_info>
+        <phrase_list>
+            <phrase id="2">
+                <text>jup_b1_stalkers_about_tunnel_dialog_go_to_2</text>
+                <precondition>dialogs.is_surge_running</precondition>
+            </phrase>
+            <phrase id="141">
+                <text>jup_b1_stalkers_about_tunnel_dialog_go_to_141</text>
+                <next>1411</next>
+                <next>1412</next>
+            </phrase>
+            <phrase id="1412">
+                <text>jup_b1_stalkers_about_tunnel_dialog_go_to_1412</text>
+            </phrase>
+            <phrase id="1411">
+                <text>jup_b1_stalkers_about_tunnel_dialog_go_to_1411</text>
+                <action>dialogs.break_dialog</action>
+                <give_info>jup_b1_teleport_to_tunnel</give_info>
+                <give_info>jup_b1_st_mission</give_info>
+            </phrase>
+            <phrase id="1">
+                <text>jup_b1_stalkers_about_tunnel_dialog_go_to_1</text>
+                <precondition>dialogs.is_surge_not_running</precondition>
+                <next>11</next>
+                <next>12</next>
+                <next>13</next>
+                <next>14</next>
+            </phrase>
+            <phrase id="12">
+                <text>jup_b1_stalkers_about_tunnel_dialog_go_to_12</text>
+            </phrase>
+            <phrase id="13">
+                <text>jup_b1_stalkers_about_tunnel_dialog_go_to_13</text>
+                <action>dialogs.break_dialog</action>
+                <dont_has_info>jup_b1_actor_dont_come</dont_has_info>
+                <give_info>jup_b1_go_on_task</give_info>
+            </phrase>
+            <phrase id="14">
+                <text>jup_b1_stalkers_about_tunnel_dialog_go_to_14</text>
+                <has_info>jup_b1_actor_dont_come</has_info>
+                <next>141</next>
+            </phrase>
+            <phrase id="0">
+                <text>jup_b1_stalkers_about_tunnel_dialog_go_to_0</text>
+                <next>1</next>
+                <next>2</next>
+            </phrase>
+            <phrase id="11">
+                <text>jup_b1_stalkers_about_tunnel_dialog_go_to_11</text>
+                <action>dialogs.break_dialog</action>
+                <give_info>jup_b1_teleport_to_tunnel</give_info>
+                <give_info>jup_b1_st_mission</give_info>
+            </phrase>
+        </phrase_list>
+    </dialog>
 </game_dialogs>

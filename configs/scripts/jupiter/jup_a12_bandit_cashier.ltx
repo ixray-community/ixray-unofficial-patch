@@ -42,7 +42,13 @@ corpse_detection_enabled = false ; Jurok
 close_snd_hello = nil ; Jurok
 close_snd_bye = nil ; Jurok
 snd_on_use = nil ; Jurok
-use = {!actor_enemy -jup_a12_actor_paid_to_cashier -jup_a12_actor_did_not_pay_to_cashier} self, false
+close_anim = nil ; Jurok
+far_anim = nil ; Jurok
+far_victim = nil ; Jurok
+close_distance = 0 ; Jurok
+far_distance = 0 ; Jurok
+close_victim = nil ; Jurok
+use = {=is_wounded} false, {=actor_enemy} false, {=has_enemy} false, {+jup_a12_actor_paid_to_cashier} false, {+jup_a12_actor_did_not_pay_to_cashier} false, {=actor_in_zone(jup_a12_sr_bandit_bodyguard)} false, {=actor_in_zone(jup_a12_sr_threat_prisoner_zone)} false, {=dist_to_actor_ge(3)} false, self ; Jurok
 meet_dialog = jup_a12_bandit_payment_dialog
 trade_enable = false
 allow_break = false

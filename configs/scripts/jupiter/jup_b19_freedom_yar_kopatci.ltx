@@ -17,7 +17,7 @@ gather_items_enabled = false
 help_wounded_enabled = false
 corpse_detection_enabled = false
 on_info2 = {+jup_b19_yar_enemy_or_dead =is_alive} %=kill_npc%
-on_offline = {-jup_b19_yar_enemy_or_dead} %+jup_b19_yar_enemy_or_dead%
+on_info3 = {=dist_to_actor_ge(140) -jup_b19_complete} %+jup_b19_yar_enemy_or_dead =kill_npc% ; Jurok
 
 
 [camper@gen]
@@ -34,7 +34,7 @@ attack_sound = false
 no_retreat = true 
 wounded = wounded         
 on_info2 = {+jup_b19_yar_enemy_or_dead =is_alive} %=kill_npc%
-on_offline = {-jup_b19_yar_enemy_or_dead} %+jup_b19_yar_enemy_or_dead%
+on_info3 = {=dist_to_actor_ge(140) -jup_b19_complete} %+jup_b19_yar_enemy_or_dead =kill_npc% ; Jurok
 
 
 [walker@start];:walker@gen
@@ -151,6 +151,7 @@ path_look = yar_15_look
 combat_ignore_cond = {=check_enemy_name(jup_b19_zombied_1) -jup_b19_actor_damaged_zombied} true, {=check_enemy_name(jup_b19_zombied_2) -jup_b19_actor_damaged_zombied} true, {=check_enemy_name(jup_b19_merc)} true, {=check_enemy_name(sim_default) =fighting_dist_ge(30)} true
 on_info = {+jup_b19_mercs_can_fight} remark@fight 
 on_info2 = {+jup_b19_fight_begun} remark@fight 
+on_info3 = {=dist_to_actor_ge(130) -jup_b19_complete} %+jup_b19_yar_enemy_or_dead =kill_npc% ; Jurok
 danger = danger
 def_state_standing = hide_na
 meet = no_meet
@@ -187,6 +188,7 @@ combat_ignore_cond = {=check_enemy_name(jup_b19_zombied_1) -jup_b19_actor_damage
 on_info = {!squad_exist(jup_b19_merc_squad) -jup_b19_actor_damaged_zombied} walker@after_fire
 on_info2 = {!squad_exist(jup_b19_merc_squad) +jup_b19_actor_damaged_zombied !squad_exist(jup_b19_kopatci_zombied_squad) -jup_b19_freedom_yar_explanations_done} walker@after_fire
 on_info3 = {!squad_exist(jup_b19_merc_squad) +jup_b19_actor_damaged_zombied !squad_exist(jup_b19_kopatci_zombied_squad) +jup_b19_freedom_yar_explanations_done} walker@after_remark
+on_info4 = {=dist_to_actor_ge(130) -jup_b19_complete} %+jup_b19_yar_enemy_or_dead =kill_npc% ; Jurok
 danger = danger
 attack_sound = false
 meet = meet@camper
@@ -237,6 +239,7 @@ def_state_moving = patrol
 def_state_standing = guard_na
 on_info = {+jup_b19_yar_dont_teleport_actor_to_yanov} walker@checkpoint %-jup_b19_dont_break%
 on_info2 = {+jup_b19_actor_damaged_zombied -jup_b19_zombied_dead} camper@fight
+on_info3 = {=dist_to_actor_ge(140) -jup_b19_complete} %+jup_b19_yar_enemy_or_dead =kill_npc% ; Jurok
 ;on_info3 = {+jup_b19_yar_switch_smart_terrain} %=teleport_npc(jup_a6_spawn_point)%
 combat_ignore_cond = {=check_enemy_name(jup_b19_zombied_1) -jup_b19_actor_damaged_zombied} true, {=check_enemy_name(jup_b19_zombied_2) -jup_b19_actor_damaged_zombied} true, {=check_enemy_name(sim_default) =fighting_dist_ge(30)} true
 danger = danger

@@ -14,6 +14,7 @@ path_look = merc_leader_look
 on_info = {+jup_b207_morgan_ambush} camper@merc_leader_hide
 on_info2 = {=actor_friend +jup_b207_morgan_gived_depot} %=actor_neutral% ; Jurok
 combat_ignore_cond = {=check_enemy_name(sim_default_killer)} true, false
+gather_items_enabled = false ; Jurok
 
 [camper@merc_leader_hide]
 path_walk = merc_4_walk
@@ -21,6 +22,7 @@ path_look = merc_4_look
 no_retreat = true
 radius = 0
 def_state_standing = hide_na
+def_state_moving = assault ; Jurok
 combat_ignore_cond = {=check_enemy_name(sim_default_killer)} true, false
 on_info = {=actor_friend +jup_b207_morgan_gived_depot} %=actor_neutral% ; Jurok
 
@@ -38,6 +40,8 @@ def_state_standing = hide_na
 on_info = {+jup_b207_morgan_ambush} camper@merc_1
 on_info2 = {=actor_neutral +jup_b207_morgan_gived_depot} %=actor_enemy% ; Jurok
 combat_ignore_cond = {=check_enemy_name(zat_b7_duty_illicit_dealer)} true, false
+gather_items_enabled = false ; Jurok
+show_spot = false ; Jurok
 
 [camper@merc_1]
 path_walk = merc_1_attack_walk
@@ -69,6 +73,8 @@ def_state_standing = hide_na
 on_info = {+jup_b207_morgan_ambush} camper@merc_2
 on_info2 = {=actor_neutral +jup_b207_morgan_gived_depot} %=actor_enemy% ; Jurok
 combat_ignore_cond = {=check_enemy_name(zat_b7_duty_illicit_dealer)} true, false
+gather_items_enabled = false ; Jurok
+show_spot = false ; Jurok
 
 [camper@merc_2]
 path_walk = merc_2_attack_walk
@@ -100,6 +106,8 @@ def_state_standing = hide_na
 on_info = {+jup_b207_morgan_ambush} camper@merc_3
 on_info2 = {=actor_neutral +jup_b207_morgan_gived_depot} %=actor_enemy% ; Jurok
 combat_ignore_cond = {=check_enemy_name(zat_b7_duty_illicit_dealer)} true, false
+gather_items_enabled = false ; Jurok
+show_spot = false ; Jurok
 
 [camper@merc_3]
 path_walk = merc_3_attack_walk
@@ -131,6 +139,8 @@ def_state_standing = hide_na
 on_info = {+jup_b207_morgan_ambush} camper@merc_4
 on_info2 = {=actor_neutral +jup_b207_morgan_gived_depot} %=actor_enemy% ; Jurok
 combat_ignore_cond = {=check_enemy_name(zat_b7_duty_illicit_dealer)} true, false
+gather_items_enabled = false ; Jurok
+show_spot = false ; Jurok
 
 [camper@merc_4]
 path_walk = merc_4_attack_walk
@@ -164,6 +174,7 @@ def_state_moving_fire = sneak_fire
 on_signal = path_end | walker@merc_5_attack
 combat_ignore_cond = {=check_enemy_name(zat_b7_duty_illicit_dealer)} true, false
 on_info = {=actor_neutral +jup_b207_morgan_gived_depot} %=actor_enemy% ; Jurok
+gather_items_enabled = false ; Jurok
 
 [walker@merc_5_attack]
 path_walk = merc_5_walk
@@ -185,6 +196,7 @@ def_state_moving_fire = sneak_fire
 on_signal = path_end | walker@merc_6_attack
 combat_ignore_cond = {=check_enemy_name(zat_b7_duty_illicit_dealer)} true, false
 on_info = {=actor_neutral +jup_b207_morgan_gived_depot} %=actor_enemy% ; Jurok
+gather_items_enabled = false ; Jurok
 
 [walker@merc_6_attack]
 path_walk = merc_6_walk
@@ -208,6 +220,7 @@ path_walk = duty_leader_position_walk
 path_look = duty_leader_position_look
 def_state_standing = threat_na
 def_state_moving = assault
+gather_items_enabled = false ; Jurok
 on_signal = path_end | remark@duty_leader_ask
 combat_ignore_cond = {=check_enemy_smart(jup_b207)} true, false
 meet = no_meet
@@ -217,6 +230,8 @@ anim = threat_na
 on_info = {=dist_to_actor_le(75)} %=play_sound(jup_b207_duty_security_squad_to_freedom_leave)%
 on_signal = sound_end | remark@duty_leader_play %+jup_b207_duty_asked_to_leave% 
 combat_ignore_cond = {=check_enemy_smart(jup_b207)} true, false
+corpse_detection_enabled = false ; Jurok
+gather_items_enabled = false ; Jurok
 meet = no_meet
 
 [remark@duty_leader_play]
@@ -224,6 +239,8 @@ on_info = {+jup_b207_freedom_refused_to_leave} %=play_sound(jup_b207_duty_securi
 on_signal = sound_end | %+jup_b207_attack_started% 
 anim = threat_na
 combat_ignore_cond = {=check_enemy_smart(jup_b207)} true, false
+corpse_detection_enabled = false ; Jurok
+gather_items_enabled = false ; Jurok
 meet = no_meet
 
 
@@ -239,6 +256,8 @@ prior = 200
 path_walk = duty_1_walk
 path_look = duty_leader_position_look
 def_state_standing = threat_na
+def_state_moving = assault ; Jurok
+gather_items_enabled = false ; Jurok
 combat_ignore_cond = {=check_enemy_smart(jup_b207)} true, false
 meet = no_meet
 
@@ -253,6 +272,7 @@ path_walk = duty_2_walk
 path_look = duty_leader_position_look
 def_state_standing = threat_na
 def_state_moving = assault
+gather_items_enabled = false ; Jurok
 combat_ignore_cond = {=check_enemy_smart(jup_b207)} true, false
 meet = no_meet
 
@@ -267,6 +287,7 @@ path_walk = duty_3_walk
 path_look = duty_leader_position_look
 def_state_standing = threat_na
 def_state_moving = assault
+gather_items_enabled = false ; Jurok
 combat_ignore_cond = {=check_enemy_smart(jup_b207)} true, false
 meet = no_meet
 
@@ -281,6 +302,7 @@ path_walk = duty_4_walk
 path_look = duty_leader_position_look
 def_state_standing = threat_na
 def_state_moving = assault
+gather_items_enabled = false ; Jurok
 combat_ignore_cond = {=check_enemy_smart(jup_b207)} true, false
 meet = no_meet
 
@@ -295,6 +317,7 @@ path_walk = duty_5_walk
 path_look = duty_leader_position_look
 def_state_standing = threat_na
 def_state_moving = assault
+gather_items_enabled = false ; Jurok
 combat_ignore_cond = {=check_enemy_smart(jup_b207)} true, false
 meet = no_meet
 
@@ -382,7 +405,10 @@ prior = 200
 [walker@freedom_1]
 path_walk = freedom_1_walk
 path_look = freedom_leader_look
+meet = no_meet ; Jurok
+def_state_moving = assault ; Jurok
 def_state_standing = hide_na
+gather_items_enabled = false ; Jurok
 on_info = {+jup_b207_duty_knows_about_depot} walker@guard_1_bad
 combat_ignore_cond = {-jup_b207_attack_started =check_enemy_smart(jup_b207_depot_attack)} true, false
 
@@ -395,7 +421,10 @@ prior = 200
 [walker@freedom_2]
 path_walk = freedom_2_walk
 path_look = freedom_leader_look
+meet = no_meet ; Jurok
+def_state_moving = assault ; Jurok
 def_state_standing = hide_na
+gather_items_enabled = false ; Jurok
 on_info = {+jup_b207_duty_knows_about_depot} walker@guard_2_bad
 combat_ignore_cond = {-jup_b207_attack_started =check_enemy_smart(jup_b207_depot_attack)} true, false
 
@@ -408,7 +437,10 @@ prior = 200
 [walker@freedom_3]
 path_walk = freedom_3_walk
 path_look = freedom_leader_look
+meet = no_meet ; Jurok
+def_state_moving = assault ; Jurok
 def_state_standing = hide_na
+gather_items_enabled = false ; Jurok
 on_info = {+jup_b207_duty_knows_about_depot} walker@guard_3_bad
 combat_ignore_cond = {-jup_b207_attack_started =check_enemy_smart(jup_b207_depot_attack)} true, false
 
@@ -421,7 +453,10 @@ prior = 200
 [walker@freedom_4]
 path_walk = freedom_4_walk
 path_look = freedom_4_look
+meet = no_meet ; Jurok
+def_state_moving = assault ; Jurok
 def_state_standing = hide_na
+gather_items_enabled = false ; Jurok
 combat_ignore_cond = {-jup_b207_attack_started =check_enemy_smart(jup_b207_depot_attack)} true, false
 
 
@@ -433,7 +468,10 @@ prior = 200
 [walker@freedom_5]
 path_walk = freedom_5_walk
 path_look = freedom_5_look
+meet = no_meet ; Jurok
+def_state_moving = assault ; Jurok
 def_state_standing = hide_na
+gather_items_enabled = false ; Jurok
 combat_ignore_cond = {-jup_b207_attack_started =check_enemy_smart(jup_b207_depot_attack)} true, false
 
 
@@ -472,12 +510,18 @@ on_info3 = {-jup_b207_guards_warning_actor =dist_to_actor_le(20) !actor_enemy =a
 combat_ignore_cond = {-jup_b207_attack_started =check_enemy_smart(jup_b207_depot_attack)} true, false
 
 [meet@guard_ok]
+close_snd_hello = {=is_wounded} nil, {!is_squad_commander} nil, {=actor_enemy} nil, meet_hello ; Jurok
+close_snd_bye = nil ; Jurok
+snd_on_use = nil ; Jurok
 close_distance = 5
 close_victim = actor
 close_anim = guard
-use	= {=actor_enemy} false, true
+use	= {=actor_enemy} false, {=has_enemy} false, true ; Jurok
 
 [meet@guard_bad]
+close_snd_hello = nil ; Jurok
+close_snd_bye = nil ; Jurok
+snd_on_use = nil ; Jurok
 close_distance = 15
 close_victim = actor
 close_anim = threat

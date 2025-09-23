@@ -1,6 +1,6 @@
 
---' РћР РЈР–РР•
---' РЎРѕРѕС‚РІРµС‚СЃС‚РІСѓРµС‚ Р»Рё СЃРѕСЃС‚РѕСЏРЅРёРµ РѕСЂСѓР¶РёСЏ С‚СЂРµР±СѓРµРјРѕРјСѓ
+--' ОРУЖИЕ
+--' Соответствует ли состояние оружия требуемому
 class "eva_state_mgr_weapon" (property_evaluator)
 function eva_state_mgr_weapon:__init(name, st) super (nil, name)
 	self.st = st
@@ -64,7 +64,7 @@ function eva_state_mgr_weapon:evaluate()
 	end
 	return false
 end
---' Р›РѕС‡РёРј Р»Рё РјС‹ РІСЃРµ СЌС‚Рѕ РґР»СЏ РѕСЂСѓР¶РёСЏ РёР»Рё РЅРµС‚?
+--' Лочим ли мы все это для оружия или нет?
 class "eva_state_mgr_weapon_locked" (property_evaluator)
 function eva_state_mgr_weapon_locked:__init(name, st) super (nil, name)
 	self.st = st
@@ -96,7 +96,7 @@ function eva_state_mgr_weapon_locked:evaluate()
 	-- Bak end
 end
 
---' РќРµРѕР±С…РѕРґРёРјРѕ Р»Рё РїРѕРІРµСЃРёС‚СЊ РѕСЂСѓР¶РёРµ РЅР° СЃРїРёРЅСѓ
+--' Необходимо ли повесить оружие на спину
 class "eva_state_mgr_weapon_strapped" (property_evaluator)
 function eva_state_mgr_weapon_strapped:__init(name, st) super (nil, name)
 	self.st = st
@@ -104,7 +104,7 @@ end
 function eva_state_mgr_weapon_strapped:evaluate()
 	return state_lib.states[self.st.target_state].weapon == "strapped"
 end
---' Р’РёСЃРёС‚ Р»Рё СѓР¶Рµ РѕСЂСѓР¶РёРµ РЅР° СЃРїРёРЅРµ
+--' Висит ли уже оружие на спине
 class "eva_state_mgr_weapon_strapped_now" (property_evaluator)
 function eva_state_mgr_weapon_strapped_now:__init(name) super (nil, name)
 end
@@ -121,7 +121,7 @@ function eva_state_mgr_weapon_strapped_now:evaluate()
 		   (self.object:weapon_strapped()) -- Bak
 end
 
---' РќРµРѕР±С…РѕРґРёРјРѕ Р»Рё РґРµСЂР¶Р°С‚СЊ РѕСЂСѓР¶РёРµ РІ СЂСѓРєР°С…
+--' Необходимо ли держать оружие в руках
 class "eva_state_mgr_weapon_unstrapped" (property_evaluator)
 function eva_state_mgr_weapon_unstrapped:__init(name, st) super (nil, name)
 	self.st = st
@@ -131,7 +131,7 @@ function eva_state_mgr_weapon_unstrapped:evaluate()
 	       state_lib.states[self.st.target_state].weapon == "fire" or
 		   state_lib.states[self.st.target_state].weapon == "sniper_fire"
 end
---' Р”РµСЂР¶РёС‚ Р»Рё СѓР¶Рµ РѕРЅ РѕСЂСѓР¶РёРµ РІ СЂСѓРєР°С…
+--' Держит ли уже он оружие в руках
 class "eva_state_mgr_weapon_unstrapped_now" (property_evaluator)
 function eva_state_mgr_weapon_unstrapped_now:__init(name) super (nil, name)
 end
@@ -145,7 +145,7 @@ function eva_state_mgr_weapon_unstrapped_now:evaluate()
 end
 
 
---' РќРµРѕР±С…РѕРґРёРјРѕ Р»Рё СЃРїСЂСЏС‚Р°С‚СЊ РѕСЂСѓР¶РёРµ РІРѕРѕР±С‰Рµ
+--' Необходимо ли спрятать оружие вообще
 class "eva_state_mgr_weapon_none" (property_evaluator)
 function eva_state_mgr_weapon_none:__init(name, st) super (nil, name)
 	self.st = st
@@ -153,7 +153,7 @@ end
 function eva_state_mgr_weapon_none:evaluate()
 	return state_lib.states[self.st.target_state].weapon == "none"			
 end
---' РЎРїСЂСЏС‚Р°РЅРѕ Р»Рё РѕСЂСѓР¶РёРµ РІРѕРѕР±С‰Рµ.
+--' Спрятано ли оружие вообще.
 class "eva_state_mgr_weapon_none_now" (property_evaluator)
 function eva_state_mgr_weapon_none_now:__init(name) super (nil, name)
 end
@@ -161,7 +161,7 @@ function eva_state_mgr_weapon_none_now:evaluate()
 	return self.object:active_item() == nil
 end
 
---' РќРµРѕР±С…РѕРґРёРјРѕ Р»Рё Р±СЂРѕСЃРёС‚СЊ РѕСЂСѓР¶РёРµ
+--' Необходимо ли бросить оружие
 class "eva_state_mgr_weapon_drop" (property_evaluator)
 function eva_state_mgr_weapon_drop:__init(name, st) super (nil, name)
 	self.st = st
@@ -170,7 +170,7 @@ function eva_state_mgr_weapon_drop:evaluate()
 	return state_lib.states[self.st.target_state].weapon == "drop"			
 end
 
---' РќРµРѕР±С…РѕРґРёРјРѕ Р»Рё СЃС‚СЂРµР»СЏС‚СЊ
+--' Необходимо ли стрелять
 class "eva_state_mgr_weapon_fire" (property_evaluator)
 function eva_state_mgr_weapon_fire:__init(name, st) super (nil, name)
 	self.st = st
@@ -181,7 +181,7 @@ function eva_state_mgr_weapon_fire:evaluate()
 end
 
 
---' Р”РѕСЃС‚Р°С‚СЊ РѕСЂСѓР¶РёРµ
+--' Достать оружие
 class "act_state_mgr_weapon_unstrapp" (action_base)
 function act_state_mgr_weapon_unstrapp:__init(name, st) super (nil, name)
 	self.st = st
@@ -206,7 +206,7 @@ function act_state_mgr_weapon_unstrapp:finalize()
 	action_base.finalize(self)
 end
 
---' РЎРїСЂСЏС‚Р°С‚СЊ РѕСЂСѓР¶РёРµ
+--' Спрятать оружие
 class "act_state_mgr_weapon_strapp" (action_base)
 function act_state_mgr_weapon_strapp:__init(name, st) super (nil, name)
 	self.st = st
@@ -241,7 +241,7 @@ function act_state_mgr_weapon_strapp:finalize()
 	action_base.finalize(self)
 end
 
---' СѓР±СЂР°С‚СЊ РѕСЂСѓР¶РёРµ
+--' убрать оружие
 class "act_state_mgr_weapon_none" (action_base)
 function act_state_mgr_weapon_none:__init(name, st) super (nil, name)
 	self.st = st
@@ -257,7 +257,7 @@ function act_state_mgr_weapon_none:finalize()
 	action_base.finalize(self)
 end
 
---' Р±СЂРѕСЃРёС‚СЊ РѕСЂСѓР¶РёРµ
+--' бросить оружие
 class "act_state_mgr_weapon_drop" (action_base)
 function act_state_mgr_weapon_drop:__init(name, st) super (nil, name)
 	self.st = st

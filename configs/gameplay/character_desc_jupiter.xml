@@ -1837,6 +1837,7 @@
 
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_ab_tu_2</actor_dialog>
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_after_end_2</actor_dialog>
+		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_go_to_2</actor_dialog>
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_after_end_go_home</actor_dialog>
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
 		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
@@ -1883,6 +1884,7 @@
 
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_ab_tu_3</actor_dialog>
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_after_end_3</actor_dialog>
+		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_go_to_2</actor_dialog>
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_after_end_go_home</actor_dialog>
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
 		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
@@ -1928,6 +1930,7 @@
 
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_ab_tu_4</actor_dialog>
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_after_end_4</actor_dialog>
+		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_go_to_2</actor_dialog>
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_after_end_go_home</actor_dialog>
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
 		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		

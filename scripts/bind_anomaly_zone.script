@@ -376,19 +376,6 @@ function anomaly_zone_binder:update(delta)
 	end
 end
 
--- mnn start
-function anomaly_zone_binder:cleanup()
-	self:turn_off()
-	self:turn_on()
-
-	for k,v in pairs(parent_zones_by_artefact_id) do
-		if (v and v.object:id() == self.object:id()) then
-			parent_zones_by_artefact_id[k] = nil
-		end
-	end
-end
--- mnn end
-
 function anomaly_zone_binder:turn_off()
 	self.turned_off = true
 	self:disable_anomaly_fields()
@@ -421,17 +408,11 @@ function anomaly_zone_binder:on_artefact_take(obj)
 		id = obj:id()
 	end
 
-	parent_zones_by_artefact_id[id] = nil -- mnn
 	artefact_ways_by_id[id] = nil
 	artefact_points_by_id[id] = nil
 	self.artefact_ways_by_id[id] = nil
 	self.artefact_points_by_id[id] = nil
 	self.spawned_count = self.spawned_count - 1
-	-- mnn start
-	if (self.spawned_count < 0) then
-		self.spawned_count = 0
-	end
-	-- mnn end
 
 	pda.change_anomalies_names()
 end
@@ -512,10 +493,4 @@ function anomaly_zone_binder:load(thread)
 	end
 	self.turned_off = thread:r_bool()
 	set_save_marker(thread, "load", true, "anomaly_zone_binder")
-
-	-- mnn start
-	if (self.spawned_count < 0 or self.spawned_count > 200) then
- 		self:cleanup()
-end
-	-- mnn end
 end

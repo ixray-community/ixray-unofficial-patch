@@ -21,6 +21,7 @@ path_look = st_3_first_look
 on_info = {=actor_has_item(jup_b1_half_artifact)} camper@zombie, {+jup_b1_start} walker@go_to_tunnel
 meet = no_meet ; Jurok
 on_info2 = {+jup_b1_st_go_home} patrol@go_to_base
+on_info3 = {+jup_b1_stalker_1_is_dead =dist_to_actor_le(4)} %+jup_b1_start +jup_b1_st_goin_in% ; Jurok
 
 [walker@go_to_tunnel]:walker@generic
 def_state_moving1 = assault

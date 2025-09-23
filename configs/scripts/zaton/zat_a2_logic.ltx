@@ -80,6 +80,8 @@ corpse_detection_enabled = false
 wounded = wounded ; Jurok
 
 [meet@base_zat_b7_stalker_victim_leader]
+close_snd_hello = nil ; Jurok
+close_snd_bye 	= nil ; Jurok
 close_anim 		= nil
 close_victim 	= nil
 far_anim 		= nil
@@ -87,7 +89,8 @@ far_victim 		= nil
 close_distance  = 0
 far_distance 	= 0
 use = {=actor_enemy} false, {=dist_to_actor_le(3)} true, false
-snd_on_use = {!dist_to_actor_le(3)} nil
+snd_on_use = nil ; Jurok
+trade_enable = false ; Jurok
 meet_on_talking = false
 
 
@@ -219,6 +222,8 @@ suitable = {=check_npc_name(sim_default) =npc_in_zone(zat_a2_sr_noweap)} true, {
 prior = 100
 
 [meet@zat_a2_animpoint_meet]
+close_snd_hello = {=check_npc_name(b14_stalker_1)} nil, {=is_wounded} nil, {!is_squad_commander} nil, {=actor_enemy} nil, meet_hello ; Jurok
+close_snd_bye 	= nil ; Jurok
 close_anim 		= nil
 close_victim 	= nil
 far_anim 		= nil
@@ -226,7 +231,7 @@ far_victim 		= nil
 close_distance 	= 0
 far_distance 	= 0
 use = {=actor_enemy} false, {=dist_to_actor_le(3)} true, false
-snd_on_use = nil
+snd_on_use = nil ; Jurok
 meet_on_talking = false
 
 [animpoint@zat_a2_animp_gen]
