@@ -42,8 +42,8 @@ configs/text/spa/*.xml text eol=crlf encoding=cp1252
 
 # X-Ray scripts
 *.script linguist-detectable
-*.script text eol=crlf encoding=utf-8 linguist-language=Lua gitlab-language=lua
-*.lua    text eol=crlf encoding=utf-8
+*.script   text eol=crlf encoding=utf-8 linguist-language=Lua gitlab-language=lua
+*.lua      text eol=crlf encoding=utf-8
 
 # X-Ray shaders
 shaders/**/*.hlsl  linguist-detectable
@@ -99,7 +99,6 @@ group.part1        text eol=crlf gitlab-language=ini
 light.part         text eol=crlf gitlab-language=ini
 portal.part        text eol=crlf gitlab-language=ini
 ps.part            text eol=crlf gitlab-language=ini
-puddles.part       text eol=crlf gitlab-language=ini
 scene_object.part  text eol=crlf gitlab-language=ini
 sector.part        text eol=crlf gitlab-language=ini
 shape.part         text eol=crlf gitlab-language=ini
@@ -108,6 +107,7 @@ sound_src.part     text eol=crlf gitlab-language=ini
 spawn.part         text eol=crlf gitlab-language=ini
 wallmark.part      binary
 way.part           text eol=crlf gitlab-language=ini
+puddles.part       text eol=crlf gitlab-language=ini
 
 *.details binary
 *.group   binary
