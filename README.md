@@ -23,7 +23,7 @@ Link to the current __IX-Ray__ [release](https://github.com/ixray-team/ixray-1.6
 
 ## Contributors
 
-### IX-Ray team
+### IX-Ray Team
 
 - Drombeys
 
@@ -43,7 +43,6 @@ Link to the current __IX-Ray__ [release](https://github.com/ixray-team/ixray-1.6
 - Kontro-zzz
 - macron
 - makdm
-- mnn
 - monk
 - naxac
 - power-cat
